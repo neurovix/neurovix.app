@@ -36,6 +36,6 @@ Marketing site for Neurovix (Spanish-language, `lang="es"`), recently migrated f
 
 ## Theming (Tailwind v4, no tailwind config file)
 
-Tokens are defined in `src/app/globals.css` with `@theme` and shared with store.neurovix.app. The theme is the `data-theme` attribute on `<html>`, set before paint by an inline script in `layout.tsx` (dark by default, `localStorage.theme` overrides) and flipped by `ThemeToggle`; the `dark:` variant is a custom variant keyed to it.
+Tokens are defined in `src/app/globals.css` with `@theme` and shared with store.neurovix.app. The theme is the `data-theme` attribute on `<html>`, set before paint by an inline script in `layout.tsx` (dark by default, `localStorage["neurovix-theme"]` overrides) and flipped by `ThemeToggle`; the `dark:` variant is a custom variant keyed to it.
 
 Dark mode works by **remapping Tailwind's `white` and `neutral-*` palette**, so write `bg-white`, `bg-neutral-50`, `text-neutral-900`, etc. once and both themes follow. Don't use `text-white`/`text-black` for theme text: use `text-neutral-900`, and `text-ink` on accent (blue) fills. Accent colors are `accent`, `accent-hover`, `accent-text`; `paper` is a fixed light tile (used behind client logos).

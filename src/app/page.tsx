@@ -96,7 +96,7 @@ export default function HomePage() {
 
       <ServicesSection limit={6} />
 
-      <ProjectsSection />
+      <ProjectsSection limit={4} />
 
       {/* FEATURED CASE */}
       <Section>
@@ -113,14 +113,14 @@ export default function HomePage() {
               <span className="text-accent-text">Trazabilidad</span> en tiempo real
             </h2>
             <p className="mt-3 text-sm text-neutral-500">
-              Software desarrollado para <span className="font-medium text-neutral-900">ALRA PLASTIC S.A. de C.V.</span>
+              Software desarrollado para <span className="font-medium text-neutral-900">ALRA Plastic Recycling</span>
             </p>
             <p className="mt-5 text-lg text-neutral-600 text-pretty">
-              Escanea códigos QR para dar seguimiento a lotes y sublotes en tiempo real. Cada lote tiene un historial completo
-              desde su origen hasta su destino final.
+              Una PWA de planta donde cada lote y sublote tiene su código QR. Cada paso registra peso y foto, y el inventario
+              por material (PET, HDPE, LDPE, PP) se actualiza solo, con historial y gráficas.
             </p>
             <ul className="mt-6 space-y-3">
-              {[...alra.highlights, "Transparencia total en la cadena de valor"].map((h) => (
+              {alra.highlights.map((h) => (
                 <li key={h} className="flex items-start gap-3 text-neutral-700">
                   <Icon name="check" className="mt-0.5 h-5 w-5 shrink-0 text-accent-text" strokeWidth={2} />
                   {h}

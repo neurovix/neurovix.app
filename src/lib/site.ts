@@ -45,24 +45,24 @@ export const SERVICES: Service[] = [
     icon: "code",
     title: "Desarrollo Web",
     description:
-      "Plataformas robustas, rápidas, seguras y escalables. Desde sistemas internos hasta productos SaaS listos para el mercado.",
-    tags: ["React", "Next.js", "Node.js", "PostgreSQL"],
+      "Plataformas robustas, rápidas, seguras y escalables: desde sitios corporativos con SEO técnico hasta sistemas internos, e-commerce y productos SaaS multi-inquilino.",
+    tags: ["Next.js", "React", "TypeScript", "Astro", "Supabase"],
     image: "/web_development.jpg",
   },
   {
     icon: "mobile",
     title: "Apps Móviles",
     description:
-      "Aplicaciones Android e iOS con experiencia de usuario intuitiva y moderna, rendimiento real y sincronización en tiempo real.",
-    tags: ["React Native", "Flutter", "Expo"],
+      "Apps Android e iOS y PWA que se usan a diario en planta, en campo o en el celular: cámara, firma, ubicación, QR y modo sin conexión.",
+    tags: ["Flutter", "PWA", "Offline"],
     image: "/mobile_development.jpg",
   },
   {
     icon: "layers",
     title: "Sistemas ERP / CRM",
     description:
-      "Automatiza y centraliza las operaciones de tu empresa con sistemas hechos exactamente para tus flujos de trabajo.",
-    tags: ["Laravel", "Django", "MySQL"],
+      "Automatiza y centraliza las operaciones de tu empresa con sistemas hechos para tus flujos: CRM, ventas, inventario, reportes de servicio y portales de clientes.",
+    tags: ["Next.js", "Supabase", "Roles y RLS"],
     image: "/development_software.jpg",
   },
   {
@@ -77,24 +77,24 @@ export const SERVICES: Service[] = [
     icon: "sparkles",
     title: "Inteligencia Artificial",
     description:
-      "Modelos de lenguaje, visión computacional y machine learning aplicados a los procesos reales de tu negocio.",
-    tags: ["OpenAI", "Python", "TensorFlow"],
+      "Modelos de lenguaje, visión computacional y machine learning aplicados a los procesos reales de tu negocio, como reconocimiento facial con antispoofing.",
+    tags: ["Python", "FastAPI", "ONNX"],
     image: "/artificial_intelligence.jpg",
   },
   {
     icon: "cloud",
     title: "Cloud & DevOps",
     description:
-      "Infraestructura en la nube, pipelines de CI/CD, contenedores y monitoreo. Tu software siempre disponible y eficiente.",
-    tags: ["AWS", "Docker", "Kubernetes"],
+      "Despliegue en Vercel, Hostinger o VPS según tu proyecto, con CI en GitHub Actions y revisiones en cada cambio. Tu software siempre disponible.",
+    tags: ["Vercel", "GitHub Actions", "VPS"],
     image: "/cloud_computing.jpg",
   },
   {
     icon: "plug",
     title: "APIs & Integraciones",
     description:
-      "Conectamos tus sistemas existentes: pagos, facturación electrónica (SAT), logística y más.",
-    tags: ["REST", "GraphQL", "CFDI"],
+      "APIs con contrato OpenAPI, tiempo real con WebSockets y conexión con tus sistemas: pagos con Mercado Pago, correo transaccional, facturación electrónica (SAT) y más.",
+    tags: ["Go", "OpenAPI", "Mercado Pago", "CFDI"],
   },
   {
     icon: "compass",
@@ -125,11 +125,11 @@ export const PROCESS = [
   },
   {
     title: "Desarrollo iterativo",
-    description: "Construimos en sprints con entregas parciales. Tú siempre ves el avance real.",
+    description: "Construimos en sprints con entregas parciales, PRs revisados y CI en GitHub Actions. Tú siempre ves el avance real.",
   },
   {
     title: "Lanzamiento & Soporte",
-    description: "Desplegamos, capacitamos y seguimos contigo después del go-live.",
+    description: "Desplegamos en Vercel, Hostinger o VPS según tu caso, capacitamos y seguimos contigo después del go-live.",
   },
 ];
 
@@ -143,17 +143,21 @@ export const WHY_US = [
     description: "Sin intermediarios. Hablas directamente con los ingenieros que construyen tu producto.",
   },
   {
+    title: "Seguridad desde el diseño",
+    description: "Seguridad a nivel de fila (RLS) en todas las tablas, roles explícitos, enlaces por token y webhooks verificados.",
+  },
+  {
     title: "Experiencia en el mercado mexicano",
-    description: "Conocemos el ecosistema local: SAT, CFDI, regulaciones y las necesidades reales de empresas en México.",
+    description: "Conocemos el ecosistema local: SAT, CFDI, Mercado Pago, la reforma laboral y las necesidades reales de empresas en México.",
   },
 ];
 
 export const STACK = [
-  { area: "Frontend", items: ["React", "Next.js", "Astro"] },
-  { area: "Backend", items: ["Node", "Python", "Laravel"] },
-  { area: "Datos", items: ["PostgreSQL", "MongoDB", "Supabase"] },
-  { area: "Cloud", items: ["AWS", "GCP", "Azure"] },
-  { area: "Mobile", items: ["Flutter", "React Native"] },
+  { area: "Frontend", items: ["Next.js", "React", "TypeScript", "Tailwind", "Astro"] },
+  { area: "Backend", items: ["Go", "Python", "Node"] },
+  { area: "Datos", items: ["Supabase", "PostgreSQL", "Redis"] },
+  { area: "Mobile", items: ["Flutter", "PWA"] },
+  { area: "Deploy", items: ["Vercel", "GitHub Actions", "VPS"] },
 ];
 
 export const VALUES: { icon: IconName; title: string; description: string }[] = [
@@ -165,7 +169,7 @@ export const VALUES: { icon: IconName; title: string; description: string }[] = 
   { icon: "bolt", title: "Creemos en la prontitud a la acción", description: "Valoramos la capacidad de responder rápidamente a las necesidades de nuestros clientes." },
 ];
 
-export type ProjectId = "alra" | "gestion" | "tindertec" | "ag";
+export type ProjectId = "alra" | "ceccin" | "minuteko" | "storix" | "ulrex" | "tindertec" | "mbs" | "ag";
 
 export type Project = {
   id: ProjectId;
@@ -182,51 +186,121 @@ export type Project = {
 export const PROJECTS: Project[] = [
   {
     id: "alra",
-    category: "App móvil",
-    title: "ALRA APP",
+    category: "PWA industrial",
+    title: "ALRA Trazabilidad",
     client: "ALRA Plastic Recycling",
-    summary: "Trazabilidad en tiempo real de lotes de plástico reciclado con códigos QR.",
+    summary: "Trazabilidad de reciclaje con lotes QR, pesos, fotos e inventario por material.",
     description:
-      "Aplicación móvil para el seguimiento completo de lotes de plástico reciclado. Cada lote recibe un código QR único que se escanea en cada etapa del proceso: Entrada → Molienda → Peletizado → Salida, garantizando trazabilidad total y control de calidad en tiempo real.",
+      "Sistema de planta en PWA para el reciclaje de plástico. Cada lote y sublote recibe un código QR (LT-n) y avanza por su ciclo Recibido → Molienda → Peletizado → Finalizado; en cada paso (molienda, peletizado, venta, retorno) se registra peso y foto. El inventario por material (PET, HDPE, LDPE, PP) se actualiza con cada movimiento, con historial y gráficas.",
     highlights: [
-      "Información instantánea de cada lote procesado",
-      "Historial completo de transformación",
-      "Certificados digitales de calidad",
+      "Lotes y sublotes con código QR",
+      "Inventario por material actualizado en cada movimiento",
+      "Clientes empresa con contactos",
+      "Roles Administrador / Operador con RLS en todas las tablas",
     ],
-    tags: ["React Native", "Nativewind", "Supabase", "Expo", "QR"],
-    delivery: "Google Play Store & Apple App Store",
+    tags: ["Next.js", "React", "Tailwind CSS", "Supabase", "Edge Functions", "react-email"],
+    delivery: "PWA de uso diario en planta",
   },
   {
-    id: "gestion",
-    category: "Web app",
-    title: "Sistema de Gestión de Proyectos",
-    client: "Empresa de construcción",
-    summary: "Gestión de obras, equipos y avances con sitio corporativo integrado.",
+    id: "ceccin",
+    category: "ERP · PWA",
+    title: "CECCIN",
+    client: "Protección contra incendios",
+    summary: "ERP para reportes de servicio de extintores e hidrantes, con app de campo y portal de clientes.",
     description:
-      "Plataforma completa para la gestión de proyectos de construcción. Permite crear y administrar proyectos, asignar tareas a equipos, establecer fechas de vencimiento y monitorear el progreso en tiempo real. Incluye página web corporativa propia integrada al sistema.",
+      "ERP para el servicio de extintores e hidrantes. Los técnicos levantan reportes en campo con fotos, firma digital y ubicación del operador; la evidencia se organiza por activo y posición, y cada reporte genera un formato de inspección imprimible. Tres frentes: app de campo, dashboard (clientes, usuarios, plantillas por planta y reportes) y portal de clientes con acceso por token.",
     highlights: [
-      "Tableros de tareas por equipo",
-      "Seguimiento de avance por obra",
-      "Sitio corporativo integrado",
+      "Levantamiento en campo con fotos, firma digital y ubicación",
+      "Plantillas de inspección por planta",
+      "Portal de clientes con acceso por token",
+      "Formato de inspección imprimible",
     ],
-    tags: ["React", "Node.js", "Express", "Supabase", "Tailwind CSS"],
-    delivery: "Web app + sitio corporativo",
+    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase", "sharp"],
+    delivery: "PWA de campo + dashboard + portal de clientes",
+  },
+  {
+    id: "minuteko",
+    category: "SaaS",
+    title: "Minuteko",
+    client: "Registro de jornada laboral",
+    summary: "SaaS multi-inquilino de registro de jornada con reconocimiento facial y modo sin conexión.",
+    description:
+      "SaaS multi-inquilino para plantas industriales y técnicos en campo, pensado para la reforma laboral que hace obligatorio el registro electrónico de jornada. Incluye roles para RH, supervisores, auditores y operadores; consentimiento, correcciones, comprobantes y reportes. La app móvil permite checar, reportar incidencias, pedir vacaciones, ver al equipo y recibir avisos, incluso sin conexión.",
+    highlights: [
+      "Reconocimiento facial con antispoofing",
+      "App móvil con modo sin conexión",
+      "API en Go con contrato OpenAPI",
+      "Esquema Postgres multi-inquilino con RLS",
+    ],
+    tags: ["Go", "OpenAPI", "Next.js", "Flutter", "FastAPI", "ONNX", "PostgreSQL", "Astro"],
+    delivery: "API + web admin + app móvil + servicio biométrico + landing",
+  },
+  {
+    id: "storix",
+    category: "E-commerce",
+    title: "Storix",
+    client: "neurovix.store",
+    summary: "Tienda de ropa tech donde el logo se dibuja en vivo sobre la foto real de la prenda.",
+    description:
+      "E-commerce de playeras, hoodies y gorras con logos de lenguajes, frameworks y herramientas de IA. La impresión no es una imagen fija: el logo se compone en vivo sobre una foto real de la prenda, y el cliente elige color, tamaño y posición antes de agregar al carrito. Pipeline propio con una foto por prenda y color y el área de impresión definida en píxeles.",
+    highlights: [
+      "Personalizador de logo en vivo sobre la prenda",
+      "Pagos con Mercado Pago (Checkout API + webhook)",
+      "Acceso sin contraseña con código por correo",
+      "CI/CD con GitHub Actions",
+    ],
+    tags: ["Next.js", "React", "Tailwind CSS", "Supabase", "Mercado Pago", "Resend", "sharp"],
+    delivery: "Tienda en línea en neurovix.store",
+  },
+  {
+    id: "ulrex",
+    category: "Sitio web + panel interno",
+    title: "Ulrex",
+    client: "Ulrex General Contracting",
+    summary: "Sitio con escena 3D hecha a mano y panel interno de CRM, ventas y organización.",
+    description:
+      "Sitio público de una página con una escena 3D hecha a mano y animaciones al hacer scroll, exportado como sitio estático. Detrás, un panel interno con CRM (leads y oportunidades), ventas (cotizaciones, productos y facturas), organización (equipo, calendario y reportes) y ajustes.",
+    highlights: [
+      "Escena 3D propia con three.js",
+      "CRM de leads y oportunidades",
+      "Cotizaciones, productos y facturas",
+      "Equipo, calendario y reportes",
+    ],
+    tags: ["Next.js", "React", "Tailwind CSS", "three.js", "Framer Motion", "Supabase"],
+    delivery: "Sitio estático en Hostinger + panel de administración",
   },
   {
     id: "tindertec",
-    category: "Web app",
-    title: "TinderTec",
-    client: "TECNM Campus Saltillo",
-    summary: "Red social universitaria con algoritmo de afinidad propio.",
+    category: "Web + móvil",
+    title: "TinderTec / ConectaTec",
+    client: "Red social universitaria · México",
+    summary: "Red social para estudiantes con chat en tiempo real, Premium y app móvil.",
     description:
-      "Plataforma de conexión social universitaria. Los estudiantes crean perfiles, descubren compañeros con intereses afines y hacen match mediante algoritmos de afinidad propios. Comenzó como app móvil y fue migrada a web en 48 horas tras el rechazo en App Store: una prueba de nuestra capacidad de adaptación bajo presión.",
+      "PWA para que estudiantes de México se conozcan, con app móvil. Filtros por estado, ciudad, universidad y campus; matches, chat en tiempo real, suscripción Premium con pagos en línea y agentes de cobro en efectivo, reportes y panel de administración. Tres piezas: web PWA, API en Go con WebSockets y cliente Flutter.",
     highlights: [
-      "Algoritmo de afinidad propio",
-      "Migración de móvil a web en 48 horas",
-      "Desplegado en VPS propio",
+      "Chat en tiempo real con WebSockets",
+      "Premium con Mercado Pago y cobro en efectivo",
+      "Filtros por estado, ciudad, universidad y campus",
+      "Moderación con reportes y panel de admin",
     ],
-    tags: ["Flutter", "Next.js", "Supabase", "Tailwind CSS"],
-    delivery: "VPS Hostinger",
+    tags: ["Next.js", "Go", "Flutter", "Supabase", "Redis", "Mercado Pago"],
+    delivery: "PWA + app móvil + API en VPS",
+  },
+  {
+    id: "mbs",
+    category: "Sitio web",
+    title: "MBS México",
+    client: "MBS Construcciones",
+    summary: "Sitio corporativo de construcción, estático y optimizado para SEO técnico.",
+    description:
+      "Sitio corporativo con cinco secciones: inicio, servicios, proyectos, nosotros y contacto. Generado como sitio estático para cargar rápido y optimizado para SEO técnico, de modo que la empresa aparezca cuando sus clientes la buscan.",
+    highlights: [
+      "Cinco secciones con portafolio de obras",
+      "Sitio estático de carga rápida",
+      "SEO técnico desde el inicio",
+    ],
+    tags: ["Astro", "Tailwind CSS"],
+    delivery: "Sitio web corporativo",
   },
   {
     id: "ag",

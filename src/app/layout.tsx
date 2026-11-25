@@ -24,14 +24,14 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#fafafa" },
-    { media: "(prefers-color-scheme: dark)", color: "#090909" },
-  ],
+  // Matches the default dark theme regardless of the OS preference.
+  themeColor: "#090909",
 };
 
 // Runs before first paint. Dark is the default (same as the store); a saved choice wins.
-const themeScript = `(function(){try{var t=localStorage.getItem("theme");document.documentElement.setAttribute("data-theme",t==="light"?"light":"dark")}catch(e){}})()`;
+// The key is site-specific so a "theme" value left by another app on the same origin
+// (e.g. localhost:3000) can't override the default.
+const themeScript = `(function(){try{var t=localStorage.getItem("neurovix-theme");document.documentElement.setAttribute("data-theme",t==="light"?"light":"dark")}catch(e){}})()`;
 
 export default function RootLayout({
   children,
