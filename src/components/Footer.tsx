@@ -1,6 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
-import { CONTACT, NAV_LINKS, SERVICES, STORE } from "@/lib/site";
-import Icon, { FacebookIcon, InstagramIcon, LinkedInIcon } from "./Icon";
+import { CONTACT, NAV_LINKS, SERVICES, SOCIAL_LINKS, STORE } from "@/lib/site";
+import Icon from "./Icon";
 import Logo from "./Logo";
 import { Container } from "./ui";
 
@@ -17,34 +18,19 @@ export default function Footer() {
               Desarrollo de software a la medida, automatización de procesos e inteligencia artificial para empresas que
               necesitan más que una plantilla.
             </p>
-            <div className="mt-6 flex gap-2">
-              <a
-                href={CONTACT.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-200 text-neutral-500 transition-colors hover:text-neutral-900"
-              >
-                <FacebookIcon className="h-4 w-4" />
-              </a>
-              <a
-                href={CONTACT.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-200 text-neutral-500 transition-colors hover:text-neutral-900"
-              >
-                <InstagramIcon className="h-4 w-4" />
-              </a>
-              <a
-                href={CONTACT.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-200 text-neutral-500 transition-colors hover:text-neutral-900"
-              >
-                <LinkedInIcon className="h-4 w-4" />
-              </a>
+            <div className="mt-6 flex gap-3">
+              {SOCIAL_LINKS.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  className="transition-transform hover:-translate-y-0.5"
+                >
+                  <Image src={social.icon} alt="" width={28} height={28} className="h-7 w-7" />
+                </a>
+              ))}
             </div>
           </div>
 
