@@ -21,7 +21,7 @@ Este sitio web presenta nuestra identidad, servicios y una forma de contacto dir
 
 El proyecto está construido con tecnologías modernas y eficientes:
 
-- 🌟 [Astro.js](https://astro.build/) – Framework web moderno, rápido y optimizado.
+- ⚡ [Next.js](https://nextjs.org/) – Framework de React con App Router y generación estática.
 - 💨 [Tailwind CSS](https://tailwindcss.com/) – Framework de estilos utilitario para construir interfaces elegantes sin esfuerzo.
 
 ---
