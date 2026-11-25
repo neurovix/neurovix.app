@@ -73,6 +73,17 @@ export default function ProyectosPage() {
                     <div className="mt-6 flex items-center gap-2 border-t border-neutral-200 pt-5 text-sm text-neutral-500">
                       <Icon name="layers" className="h-4 w-4" />
                       {p.delivery}
+                      {p.url && (
+                        <a
+                          href={p.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="ml-auto inline-flex shrink-0 items-center gap-1 font-medium text-accent-text hover:underline"
+                        >
+                          Visitar
+                          <Icon name="external" className="h-3.5 w-3.5" />
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>

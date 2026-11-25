@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { NAV_LINKS } from "@/lib/site";
+import { NAV_LINKS, STORE } from "@/lib/site";
 import Icon from "./Icon";
 import Logo from "./Logo";
 import ThemeToggle from "./ThemeToggle";
@@ -37,6 +37,17 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
+          <li>
+            <a
+              href={STORE.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-sm text-neutral-500 transition-colors hover:text-neutral-900"
+            >
+              {STORE.label}
+              <Icon name="external" className="h-3.5 w-3.5" />
+            </a>
+          </li>
         </ul>
 
         <div className="ml-auto flex items-center gap-2">
@@ -80,6 +91,18 @@ export default function Navbar() {
                 </Link>
               </li>
             ))}
+            <li>
+              <a
+                href={STORE.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+                className="flex items-center gap-1.5 rounded-lg px-3 py-2.5 text-base text-neutral-600"
+              >
+                {STORE.label}
+                <Icon name="external" className="h-4 w-4" />
+              </a>
+            </li>
             <li className="pt-2">
               <Link href="/contacto" onClick={() => setOpen(false)} className={`w-full ${buttonClass("primary", "lg")}`}>
                 Solicitar demostración

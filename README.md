@@ -48,8 +48,7 @@ The site runs at `http://localhost:3000`.
 src/
 ├── app/          Routes (App Router)
 ├── components/   UI components
-├── lib/          Site configuration and content
-└── assets/       Imported images
+└── lib/          Site configuration and content
 public/           Static files and icons
 ```
 
