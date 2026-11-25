@@ -1,50 +1,84 @@
-# 🧠 Neurovix – Soluciones Inteligentes para tu Negocio
+<p align="center">
+  <img src="./public/icons/neurovix_new_icon_with_letters.png" alt="Neurovix" width="420" />
+</p>
 
-Bienvenido al repositorio oficial de **Neurovix**, donde el **desarrollo de software a medida**, la **automatización inteligente de procesos** y la **creación de contenido visual profesional** se combinan para llevar a tu empresa al siguiente nivel.
+<p align="center">
+  Custom software, automation and artificial intelligence for businesses.
+</p>
 
----
-
-## 🚀 ¿Qué es Neurovix?
-
-**Neurovix** es una empresa mexicana dedicada a transformar ideas en soluciones tecnológicas efectivas. Nos especializamos en:
-
-- ✅ **Desarrollo de software personalizado** según las necesidades de tu negocio.
-- 🤖 **Automatización de procesos con inteligencia artificial**, para aumentar la eficiencia operativa.
-- 🎨 **Creación de anuncios visuales, mockups y flyers profesionales** que elevan tu marca.
-- 📊 Integraciones visuales y funcionales con interfaces modernas y limpias.
-
-Este sitio web presenta nuestra identidad, servicios y una forma de contacto directa con potenciales clientes.
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-16-000000?style=flat-square&logo=nextdotjs" alt="Next.js 16" />
+  <img src="https://img.shields.io/badge/React-19-20232a?style=flat-square&logo=react" alt="React 19" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-4-0f172a?style=flat-square&logo=tailwindcss" alt="Tailwind CSS 4" />
+  <img src="https://img.shields.io/badge/TypeScript-5-1e293b?style=flat-square&logo=typescript" alt="TypeScript 5" />
+</p>
 
 ---
 
-## 🛠️ Tecnologías utilizadas
+## About
 
-El proyecto está construido con tecnologías modernas y eficientes:
+The official website of **Neurovix**, a software company based in Saltillo, Coahuila, Mexico. It presents our services, projects and contact channels.
 
-- ⚡ [Next.js](https://nextjs.org/) – Framework de React con App Router y generación estática.
-- 💨 [Tailwind CSS](https://tailwindcss.com/) – Framework de estilos utilitario para construir interfaces elegantes sin esfuerzo.
+**Services:** web and mobile development, ERP/CRM systems, IoT/IIoT automation and applied AI.
 
----
+## Local development
 
-## 📸 Vista previa
-
-![Preview de Neurovix](./public/preview.png)
-
-> *Este es un mockup de ejemplo. Asegúrate de agregar tu captura real en la carpeta `/public` y actualizar el nombre de archivo si es necesario.*
-
----
-
-## 📦 Instalación y ejecución local
-
-Sigue estos pasos para correr el proyecto en tu máquina:
+Requires Node.js 24 and pnpm.
 
 ```bash
-# 1. Clonar el repositorio
-git clone https://github.com/neurovix/website.git
-cd website
+git clone git@github.com:neurovix/neurovix.app.git
+cd neurovix.app
+pnpm install
+pnpm dev
+```
 
-# 2. Instalar dependencias
-npm install
+The site runs at `http://localhost:3000`.
 
-# 3. Ejecutar en modo desarrollo
-npm run dev
+| Command          | Description                         |
+| ---------------- | ----------------------------------- |
+| `pnpm dev`       | Start the development server        |
+| `pnpm build`     | Create a production build           |
+| `pnpm start`     | Serve the production build          |
+| `pnpm lint`      | Run ESLint                          |
+| `pnpm typecheck` | Type-check with TypeScript          |
+
+## Structure
+
+```
+src/
+├── app/          Routes (App Router)
+├── components/   UI components
+├── lib/          Site configuration and content
+└── assets/       Imported images
+public/           Static files and icons
+```
+
+Editable content (contact details, services, clients) lives in `src/lib/site.ts`.
+
+## Branch flow
+
+```
+develop  →  testing  →  main
+```
+
+- Every push to `develop` is merged into `testing` automatically.
+- On `testing`, CI runs lint, type checks, tests and a production build.
+- If everything passes, a pull request from `testing` to `main` is opened.
+
+## Contact
+
+<p>
+  <a href="https://facebook.com/neurovix.nv"><img src="./public/icons/facebook.png" alt="Facebook" width="24" /></a>
+  &nbsp;
+  <a href="https://instagram.com/neurovix.nv"><img src="./public/icons/instagram.png" alt="Instagram" width="24" /></a>
+</p>
+
+fervazquez@neurovix.com.mx · +52 (844) 858-0335
+
+<br />
+
+<p align="center">
+  <img src="./public/icons/neurovix_new_icon.png" alt="Neurovix" width="48" />
+  <br />
+  <sub>© Neurovix. All rights reserved.</sub>
+</p>
