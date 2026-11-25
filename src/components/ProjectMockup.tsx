@@ -246,7 +246,7 @@ function MinutekoMockup() {
 
 function StorixMockup() {
   return (
-    <BrowserFrame url="neurovix.store">
+    <BrowserFrame url="store.neurovix.app">
       <div className="grid grid-cols-[1.1fr_1fr] gap-4 p-4">
         <div className="relative flex aspect-square items-center justify-center rounded-lg bg-neutral-200">
           <svg viewBox="0 0 100 100" className="h-full w-full text-neutral-900" aria-hidden="true">

@@ -3,13 +3,21 @@ import type { IconName } from "@/components/Icon";
 export const CONTACT = {
   phoneDisplay: "+52 (844) 858-0335",
   phoneHref: "tel:+528448580335",
-  email: "fervazquez@neurovix.com.mx",
+  email: "fernandovazquez.favm@gmail.com",
   whatsappHref:
     "https://api.whatsapp.com/send/?phone=528448580335&text=Hola%20Neurovix%2C%20estoy%20interesado%20en%20sus%20servicios.%20¿Podrían%20proporcionarme%20más%20información%3F",
   hours: "08:00 a 20:00, de lunes a domingo",
   location: "Saltillo, Coahuila, México",
-  facebook: "https://facebook.com/neurovix.nv",
-  instagram: "https://instagram.com/neurovix.nv",
+  facebook: "https://www.facebook.com/neurovix.nv",
+  instagram: "https://www.instagram.com/neurovix.nv/",
+  linkedin: "https://www.linkedin.com/company/neurovix/",
+};
+
+/** Neurovix's own tech merch clothing store (the Storix project). */
+export const STORE = {
+  href: "https://store.neurovix.app",
+  display: "store.neurovix.app",
+  label: "Tienda",
 };
 
 export const NAV_LINKS = [
@@ -181,6 +189,8 @@ export type Project = {
   highlights: string[];
   tags: string[];
   delivery: string;
+  /** Public URL of the live project, when it can be visited. */
+  url?: string;
 };
 
 export const PROJECTS: Project[] = [
@@ -239,7 +249,7 @@ export const PROJECTS: Project[] = [
     id: "storix",
     category: "E-commerce",
     title: "Storix",
-    client: "neurovix.store",
+    client: "Producto propio · store.neurovix.app",
     summary: "Tienda de ropa tech donde el logo se dibuja en vivo sobre la foto real de la prenda.",
     description:
       "E-commerce de playeras, hoodies y gorras con logos de lenguajes, frameworks y herramientas de IA. La impresión no es una imagen fija: el logo se compone en vivo sobre una foto real de la prenda, y el cliente elige color, tamaño y posición antes de agregar al carrito. Pipeline propio con una foto por prenda y color y el área de impresión definida en píxeles.",
@@ -250,7 +260,8 @@ export const PROJECTS: Project[] = [
       "CI/CD con GitHub Actions",
     ],
     tags: ["Next.js", "React", "Tailwind CSS", "Supabase", "Mercado Pago", "Resend", "sharp"],
-    delivery: "Tienda en línea en neurovix.store",
+    delivery: "Tienda en línea en store.neurovix.app",
+    url: "https://store.neurovix.app",
   },
   {
     id: "ulrex",
