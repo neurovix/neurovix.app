@@ -32,7 +32,7 @@ Marketing site for Neurovix (Spanish-language, `lang="es"`), recently migrated f
 - **Content lives in `src/lib/site.ts`**: contact details, nav links, stats, clients, services, process, projects, values. Pages and sections render from these arrays, so most copy changes belong there, not in JSX. `ProjectId` there is a closed union that `src/components/ProjectMockup.tsx` switches over: adding a project means adding an id, a `PROJECTS` entry and a mockup.
 - **Routes** (`src/app/`): `/`, `/servicios`, `/proyectos`, `/sobre_nosotros`, `/contacto`, plus `/landing`, a standalone page for Meta ads campaigns. Route folder names are the Spanish URLs; keep them as-is. Each page exports its own `metadata`; the root layout sets the `%s | Neurovix` title template.
 - **Components**: `ui.tsx` holds primitives (`Container`, `Section`, `SectionHeading`, `ButtonLink`/`buttonClass`, `Tag`, `IconBadge`, `PageHeader`); `sections.tsx` holds data-driven page sections reused across pages (`ServicesSection`, `ProjectsSection`, `CTASection`, …). `Icon.tsx` is a map of inline SVG paths: add a path there for a new icon (its keys form the `IconName` type).
-- **Images**: served from `public/` (`/companies/*`, `/icons/*`, service photos) via `next/image`. `src/assets/` is an Astro leftover and is not imported anywhere.
+- **Images**: served from `public/` (`/companies/*`, `/icons/*`, service photos) via `next/image`.
 
 ## Theming (Tailwind v4, no tailwind config file)
 
