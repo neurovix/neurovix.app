@@ -1,0 +1,50 @@
+name: Promote develop → testing
+
+on:
+  push:
+    branches: [develop]
+  workflow_dispatch:
+
+concurrency:
+  group: promote-develop-to-testing
+  cancel-in-progress: false
+
+permissions:
+  contents: write # push to testing
+  actions: write  # trigger the testing workflow
+
+jobs:
+  merge:
+    name: Merge develop into testing
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: testing
+          fetch-depth: 0
+
+      - name: Merge develop into testing
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin develop
+          if git merge-base --is-ancestor origin/develop HEAD; then
+            echo "testing already contains develop; nothing to do."
+            echo "MERGED=false" >> "$GITHUB_ENV"
+            exit 0
+          fi
+          if ! git merge --no-edit origin/develop -m "Merge develop into testing (${GITHUB_SHA::7})"; then
+            echo "::error::Merge conflict between develop and testing. Resolve it manually."
+            git merge --abort
+            exit 1
+          fi
+          git push origin HEAD:testing
+          echo "MERGED=true" >> "$GITHUB_ENV"
+
+      # Pushes made with GITHUB_TOKEN don't trigger other workflows,
+      # so start the testing CI (lint/typecheck/test/build → PR to main) explicitly.
+      - name: Trigger testing CI
+        if: env.MERGED == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run testing.yml --repo "$GITHUB_REPOSITORY" --ref testing
