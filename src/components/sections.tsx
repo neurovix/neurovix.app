@@ -114,13 +114,14 @@ export function ProjectPreviewCard({ project, index }: { project: Project; index
   );
 }
 
-export function ProjectsSection() {
+export function ProjectsSection({ limit }: { limit?: number }) {
+  const items = limit ? PROJECTS.slice(0, limit) : PROJECTS;
   return (
     <Section id="proyectos" className="bg-white border-y border-neutral-200">
       <SectionHeading
         eyebrow="Proyectos"
         title="Software real, en producción, para empresas reales"
-        description="Desde reciclaje industrial hasta construcción y educación: hemos diseñado, construido y desplegado soluciones en sectores muy distintos."
+        description="Reciclaje, protección contra incendios, recursos humanos, construcción, comercio y educación: hemos diseñado, construido y desplegado soluciones en sectores muy distintos."
         action={
           <ButtonLink href="/proyectos" variant="secondary" arrow>
             Ver todos los proyectos
@@ -128,7 +129,7 @@ export function ProjectsSection() {
         }
       />
       <div className="grid gap-5 md:grid-cols-2">
-        {PROJECTS.map((p, i) => (
+        {items.map((p, i) => (
           <ProjectPreviewCard key={p.id} project={p} index={i} />
         ))}
       </div>

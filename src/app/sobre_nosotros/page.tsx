@@ -40,7 +40,7 @@ export default function SobreNosotrosPage() {
             <SectionHeading
               eyebrow="Nuestra misión"
               title="Software que resuelve problemas reales de negocio"
-              description="Construimos cada producto como si fuera nuestro: entendemos tu operación, diseñamos la solución correcta y la acompañamos después del lanzamiento. Hemos trabajado con empresas de reciclaje, construcción, manufactura y educación."
+              description="Construimos cada producto como si fuera nuestro: entendemos tu operación, diseñamos la solución correcta y la acompañamos después del lanzamiento. Hemos trabajado con empresas de reciclaje, protección contra incendios, construcción, manufactura, comercio y educación; también tenemos productos propios, como la tienda Storix."
             />
           </div>
         </div>

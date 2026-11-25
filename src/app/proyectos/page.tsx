@@ -7,7 +7,7 @@ import { PROJECTS } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Proyectos",
-  description: "Casos de éxito de Neurovix: apps móviles, web apps y sitios corporativos en producción.",
+  description: "Casos de éxito de Neurovix: PWA industriales, ERP, SaaS, e-commerce, apps móviles y sitios corporativos en producción.",
 };
 
 export default function ProyectosPage() {

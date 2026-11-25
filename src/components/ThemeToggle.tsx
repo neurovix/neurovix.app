@@ -13,7 +13,7 @@ export default function ThemeToggle({ className = "" }: { className?: string }) 
     const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
     root.setAttribute("data-theme", next);
     try {
-      localStorage.setItem("theme", next);
+      localStorage.setItem("neurovix-theme", next);
     } catch {}
   };
 

@@ -54,7 +54,7 @@ export default function LandingPage() {
 
       <ClientsStrip />
       <ServicesSection />
-      <ProjectsSection />
+      <ProjectsSection limit={4} />
       <ProcessSection />
       <WhyUsSection />
 
