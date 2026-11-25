@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { CONTACT, NAV_LINKS, SERVICES } from "@/lib/site";
-import Icon, { FacebookIcon, InstagramIcon } from "./Icon";
+import { CONTACT, NAV_LINKS, SERVICES, STORE } from "@/lib/site";
+import Icon, { FacebookIcon, InstagramIcon, LinkedInIcon } from "./Icon";
 import Logo from "./Logo";
 import { Container } from "./ui";
 
@@ -36,6 +36,15 @@ export default function Footer() {
               >
                 <InstagramIcon className="h-4 w-4" />
               </a>
+              <a
+                href={CONTACT.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-200 text-neutral-500 transition-colors hover:text-neutral-900"
+              >
+                <LinkedInIcon className="h-4 w-4" />
+              </a>
             </div>
           </div>
 
@@ -49,6 +58,17 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <a
+                  href={STORE.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-neutral-500 transition-colors hover:text-neutral-900"
+                >
+                  {STORE.label}
+                  <Icon name="external" className="h-3.5 w-3.5" />
+                </a>
+              </li>
             </ul>
           </div>
 

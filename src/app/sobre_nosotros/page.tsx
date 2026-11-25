@@ -3,7 +3,7 @@ import Image from "next/image";
 import Icon from "@/components/Icon";
 import { CTASection, StatsGrid, WhyUsSection } from "@/components/sections";
 import { ButtonLink, IconBadge, PageHeader, Section, SectionHeading } from "@/components/ui";
-import { VALUES } from "@/lib/site";
+import { STORE, VALUES } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Nosotros",
@@ -40,7 +40,23 @@ export default function SobreNosotrosPage() {
             <SectionHeading
               eyebrow="Nuestra misión"
               title="Software que resuelve problemas reales de negocio"
-              description="Construimos cada producto como si fuera nuestro: entendemos tu operación, diseñamos la solución correcta y la acompañamos después del lanzamiento. Hemos trabajado con empresas de reciclaje, protección contra incendios, construcción, manufactura, comercio y educación; también tenemos productos propios, como la tienda Storix."
+              description={
+                <>
+                  Construimos cada producto como si fuera nuestro: entendemos tu operación, diseñamos la solución correcta y
+                  la acompañamos después del lanzamiento. Hemos trabajado con empresas de reciclaje, protección contra
+                  incendios, construcción, manufactura, comercio y educación; también tenemos productos propios, como
+                  Storix, nuestra tienda en línea de ropa tech merch:{" "}
+                  <a
+                    href={STORE.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-accent-text hover:underline"
+                  >
+                    {STORE.display}
+                  </a>
+                  .
+                </>
+              }
             />
           </div>
         </div>
