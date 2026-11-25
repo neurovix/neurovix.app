@@ -67,12 +67,14 @@ develop  →  testing  →  main
 ## Contact
 
 <p>
-  <a href="https://facebook.com/neurovix.nv"><img src="./public/icons/facebook.png" alt="Facebook" width="24" /></a>
+  <a href="https://www.facebook.com/neurovix.nv"><img src="./public/icons/facebook.svg" alt="Facebook" width="28" /></a>
   &nbsp;
-  <a href="https://instagram.com/neurovix.nv"><img src="./public/icons/instagram.png" alt="Instagram" width="24" /></a>
+  <a href="https://www.instagram.com/neurovix.nv/"><img src="./public/icons/instagram.svg" alt="Instagram" width="28" /></a>
+  &nbsp;
+  <a href="https://www.linkedin.com/company/neurovix/"><img src="./public/icons/linkedin.svg" alt="LinkedIn" width="28" /></a>
 </p>
 
-fervazquez@neurovix.com.mx · +52 (844) 858-0335
+fernandovazquez.favm@gmail.com · +52 (844) 858-0335
 
 <br />
 

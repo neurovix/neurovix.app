@@ -13,6 +13,13 @@ export const CONTACT = {
   linkedin: "https://www.linkedin.com/company/neurovix/",
 };
 
+/** Brand-colored icons live in public/icons and are shared with the README. */
+export const SOCIAL_LINKS = [
+  { label: "Facebook", href: CONTACT.facebook, icon: "/icons/facebook.svg" },
+  { label: "Instagram", href: CONTACT.instagram, icon: "/icons/instagram.svg" },
+  { label: "LinkedIn", href: CONTACT.linkedin, icon: "/icons/linkedin.svg" },
+];
+
 /** Neurovix's own tech merch clothing store (the Storix project). */
 export const STORE = {
   href: "https://store.neurovix.app",
