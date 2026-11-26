@@ -124,14 +124,6 @@ export const SERVICES: Service[] = [
     tags: ["Arquitectura", "Auditoría", "Roadmap"],
     image: "/it_consulting.jpg",
   },
-  {
-    icon: "wrench",
-    title: "Soporte & Mantenimiento",
-    description:
-      "Soporte técnico continuo y mantenimiento preventivo para garantizar el correcto funcionamiento de tus sistemas.",
-    tags: ["SLA", "Monitoreo", "Actualizaciones"],
-    image: "/hardware.jpg",
-  },
 ];
 
 export const PROCESS = [
