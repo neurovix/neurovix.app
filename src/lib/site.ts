@@ -41,10 +41,15 @@ export const STATS = [
   { value: "MX · US", label: "Clientes en dos países" },
 ];
 
+// Logos in /companies/optimized are trimmed to their content with a transparent
+// background; width/height are the files' intrinsic pixels (they set the aspect ratio).
 export const CLIENTS = [
-  { name: "A | G Maquinado", logo: "/companies/ag_maquinado.webp", width: 160, height: 50 },
-  { name: "ALRA Plastic", logo: "/companies/alra_plastic.png", width: 90, height: 50 },
-  { name: "MBS Construcciones", logo: "/companies/mbs_construcciones.webp", width: 160, height: 50 },
+  { name: "A | G Maquinado", logo: "/companies/optimized/ag-maquinado.webp", width: 640, height: 214 },
+  { name: "ALRA Plastic", logo: "/companies/optimized/alra-plastic.webp", width: 176, height: 256 },
+  { name: "CCECIN Fire Protection", logo: "/companies/optimized/ccecin.webp", width: 378, height: 97 },
+  { name: "MBS Construcciones", logo: "/companies/optimized/mbs-construcciones.webp", width: 640, height: 216 },
+  { name: "Supermarket ML", logo: "/companies/optimized/supermarket-ml.webp", width: 230, height: 146 },
+  { name: "Tindertec", logo: "/companies/optimized/tindertec.webp", width: 247, height: 256 },
 ];
 
 export type Service = {
