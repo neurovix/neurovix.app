@@ -24,10 +24,6 @@ export default function HomePage() {
         <div className="pointer-events-none absolute inset-0 bg-glow" />
         <Container className="relative grid items-center gap-14 pt-16 pb-20 md:pt-24 md:pb-28 lg:grid-cols-[1.15fr_1fr]">
           <div>
-            <span className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-3 py-1 text-xs text-neutral-600">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-              Disponibles para nuevos proyectos
-            </span>
             <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-balance">
               Desarrollo de software a la medida y{" "}
               <span className="text-accent-text">automatización de procesos</span>

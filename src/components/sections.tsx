@@ -18,25 +18,73 @@ export function StatsGrid({ className = "" }: { className?: string }) {
   );
 }
 
+// Logos have very different shapes (wide wordmarks vs. square badges). Sizing each one to the
+// same visual area, capped to the tile, makes them read as equally weighted.
+const LOGO_AREA = 5200;
+const LOGO_MAX_W = 144;
+const LOGO_MAX_H = 56;
+
+function logoSize({ width, height }: { width: number; height: number }) {
+  const ratio = width / height;
+  let h = Math.sqrt(LOGO_AREA / ratio);
+  let w = h * ratio;
+  if (h > LOGO_MAX_H) [h, w] = [LOGO_MAX_H, LOGO_MAX_H * ratio];
+  if (w > LOGO_MAX_W) [h, w] = [LOGO_MAX_W / ratio, LOGO_MAX_W];
+  return { width: Math.round(w), height: Math.round(h) };
+}
+
+// Each half of the marquee track repeats the logos so it is wider than any screen, which keeps
+// the -50% loop seamless.
+const MARQUEE_REPEAT = 3;
+
+function ClientLogos({ hidden = false }: { hidden?: boolean }) {
+  const items = Array.from({ length: MARQUEE_REPEAT }, () => CLIENTS).flat();
+  return (
+    <ul className="flex shrink-0 items-center" aria-hidden={hidden || undefined}>
+      {items.map((c, i) => {
+        const size = logoSize(c);
+        // Every tile carries its own right padding (no flex gap) so both halves are exactly equal.
+        return (
+          <li key={`${c.name}-${i}`} className="shrink-0 pr-4">
+            {/* Logos sit on the paper tile in both themes so their own colors stay legible. */}
+            <div className="flex h-20 w-44 items-center justify-center rounded-xl bg-paper">
+              <Image
+                src={c.logo}
+                alt={hidden || i >= CLIENTS.length ? "" : c.name}
+                width={size.width}
+                height={size.height}
+                style={size}
+                className="object-contain grayscale transition duration-300 hover:grayscale-0"
+              />
+            </div>
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
 export function ClientsStrip() {
   return (
     <div className="border-y border-neutral-200 bg-white">
-      <Container className="flex flex-col items-center gap-6 py-10 md:flex-row md:justify-between">
-        <p className="text-sm text-neutral-500 md:max-w-[14rem]">Empresas que confían en nosotros</p>
-        <ul className="flex flex-wrap items-center justify-center gap-4">
-          {CLIENTS.map((c) => (
-            // Logos sit on the paper tile in both themes so their own colors stay legible.
-            <li key={c.name} className="flex h-16 items-center rounded-xl bg-paper px-5">
-              <Image
-                src={c.logo}
-                alt={c.name}
-                width={c.width}
-                height={c.height}
-                className="h-10 w-auto object-contain grayscale transition hover:grayscale-0"
-              />
-            </li>
-          ))}
-        </ul>
+      <Container className="flex flex-col items-center gap-6 py-10 md:flex-row md:gap-10">
+        <p className="shrink-0 text-center text-sm text-neutral-500 md:max-w-[12rem] md:text-left">
+          Empresas que confían en nosotros
+        </p>
+        <div
+          className="relative w-full min-w-0 flex-1 overflow-hidden mask-x-from-85% mask-x-to-100%"
+          aria-label="Empresas que confían en nosotros"
+          role="region"
+        >
+          {/* Never paused: the loop keeps running on hover and focus. */}
+          <div
+            className="flex w-max animate-marquee"
+            style={{ animationDuration: `${CLIENTS.length * MARQUEE_REPEAT * 4}s` }}
+          >
+            <ClientLogos />
+            <ClientLogos hidden />
+          </div>
+        </div>
       </Container>
     </div>
   );
